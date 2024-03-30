@@ -42,4 +42,10 @@ def product_detail(request, id, slug):
                   {'product': product,
                    'cart_product_form': cart_product_form,
                    'cart': cart})
+def home(request):
+    return render(request, 'shop/home.html')
+
+def about(request):
+    return render(request, 'shop/about.html')
+
 
