@@ -1,15 +1,28 @@
 {% extends 'shop/base.html' %}
-
+{% load static %}
 {% block content %}
-    <h1>Welcome to Delicious Bites</h1>
+    
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    
+    <div class="container">
+        <div class = "row">
+                <h1>Delicious Bites</h1>
+                <img src="{% static 'images/StrawberryCake.jpeg' %}" alt="Title image">
+            </div>
+        </div>
+        
+        <div class = "row">        
+            <div class="text-center">
+            <p>At Delicious Bites, we are on a mission to elevate our customers' day with
+            baked goods such as bread, cakes, and cookies. Made from only the freshest,
+            locally sourced ingredients, we are committed to ensuring that every bite is
+            a celebration.</p>
+            </div>
+        </div>
 
-    <p>At Delicious Bites, we are on a mission to elevate our customers' day with
-        baked goods such as bread, cakes, and cookies. Made from only the freshest,
-        locally sourced ingredients, we are committed to ensuring that every bite is
-        a celebration.</p>
 
     <ul>
-        <li><strong>About:</strong> {{ num_books }}</li>
+        <a href="/about/">About Us</a>
 
     </ul>
 
