@@ -8,7 +8,11 @@ body {
 
 h1, h2, h3, h4, h5 , h6 { 
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
+<<<<<<< Updated upstream
     color: #0000FF;
+=======
+    color: #993333;
+>>>>>>> Stashed changes
 }
 
 a {
@@ -126,13 +130,31 @@ ul.errorlist {
     overflow:auto;
 }
 
-#header .logo {
-    font-family: 'Ubuntu', sans-serif;
-    float:left;
-    color:#333;
-    font-size:22px;
-    margin-right:10%;
+.navBar {
+    display: flex;
+    justify-content: space-between; /* Space out the logo and nav buttons */
+    align-items: center; /* Vertically align items in the navBar */
+    padding: 10px;
+    background-color: #993333; /* Example color, change as needed */
 }
+
+.navBar.logo {
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+    margin-right: auto; /* Pushes everything else to the right */
+}
+
+.nav-buttons {
+    flex-grow: 1; /* Allows nav buttons to grow as needed */
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.nav-buttons .button {
+    padding: 10px 20px; /* Adjust the padding as needed */
+    /* No need for margin-left on individual buttons due to 'gap' property */
+}
+
 
 #subheader .cart {
     float:right;

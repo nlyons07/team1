@@ -4,25 +4,22 @@
 <head>
     <meta charset="utf-8"/>
     <title>{% block title %}Delicious Bites{% endblock %}</title>
-
     <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
-<div id="header">
+<div id="navBar"> 
     <a href="/" class="logo">Delicious Bites</a>
-</div>
-<div id="subheader">
-    <div class="cart">
+    <div class="nav-buttons"> <!-- This will contain Menu, About, and Cart -->
+        <a href="#" class="button">Menu</a>
+        <a href="#" class="button">About</a>
         {% with total_items=cart|length %}
-            {% if cart|length > 0 %}
-                Your cart:
-                <a href="{% url "cart:cart_detail" %}">
-                    {{ total_items }} item{{ total_items|pluralize }},
-                    ${{ cart.get_total_price }}
-                </a>
+        <a href="{% url 'cart:cart_detail' %}" class="button">
+            {% if total_items > 0 %}
+                Cart: {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
             {% else %}
-                Your cart is empty.
+                Cart is empty
             {% endif %}
+        </a>
         {% endwith %}
     </div>
 </div>
