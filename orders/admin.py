@@ -47,7 +47,7 @@ order_pdf.short_description = 'Invoice'
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email',
+    list_display = ['id', 'customer', 'email',
                     'address', 'postal_code', 'city', 'paid',
                     'created', 'updated', order_detail, order_pdf]
     list_filter = ['paid', 'created', 'updated']
