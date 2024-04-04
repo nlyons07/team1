@@ -1,11 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html>
+
 <head>
     <meta charset="utf-8"/>
     <title>{% block title %}Delicious Bites{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
+
 <body>
 <div id="navBar">
     <a href="/" class="logo">Delicious Bites</a>
@@ -23,6 +26,7 @@
         {% endwith %}
     </div>
 </div>
+
 <div id="content">
     {% block content %}
     {% endblock %}
