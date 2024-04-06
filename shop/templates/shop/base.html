@@ -14,7 +14,7 @@
     <a href="/" class="logo">Delicious Bites</a>
     <div class="nav-buttons"> <!-- This will contain Menu, About, and Cart -->
         <a href="#" class="button">Menu</a>
-        <a href="#" class="button">About</a>
+        <a href="/about/" class="button">About</a>
         {% with total_items=cart|length %}
         <a href="{% url 'cart:cart_detail' %}" class="button">
             {% if total_items > 0 %}
