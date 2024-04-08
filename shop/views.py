@@ -50,5 +50,6 @@ def about(request):
     return render(request, 'shop/about.html')
 
 def menu(request):
-    return render(request, 'shop/menu.html')
+    categories = Category.objects.all().prefetch_related('products')
+    return render(request, 'shop/menu.html', {'categories': categories})
 

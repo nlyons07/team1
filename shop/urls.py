@@ -4,7 +4,6 @@ from django.urls import path
 from . import views
 from django.urls import re_path
 from django.views.static import serve
-
 from django.conf.urls.static import static
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
