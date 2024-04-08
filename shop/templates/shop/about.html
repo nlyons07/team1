@@ -1,0 +1,206 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}About Us{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <h1>About Us</h1>
+            <div class="image-container">
+                <img src="{% static 'images/WebAppDevLogo.jpg' %}" alt="Logo">
+            </div>
+            <div class="text-box">
+                <p>At Delicious Bites, our mission is simple yet profound, we are dedicated to enhancing our
+                    customers' everyday experiences with our baked goods. All of our products are handcrafted
+                    with care using only the finest ingredients.
+                </p>
+                <p>Insert more about us stuff here</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Values section -->
+
+    <h2>Core Values</h2>
+
+    <style>
+        h1 {
+            font-size: 65px;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .image-container {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            border-radius: 70px;
+            overflow: hidden;
+            vertical-align: top;
+            margin-bottom: 60px;
+            margin-right: 50px;
+        }
+
+        .image-container img {
+            display: block; /* Ensure the image fills the container */
+            width: 100%; /* Ensure the image fills the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .text-box {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .value-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .value-container > div {
+            flex: 0 0 calc(33.33% - 25px);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .value-container img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+    <div class="value-container">
+        <div class="value1">
+            <img src="{% static 'images/Value1.png' %}" alt="Quality">
+            <p>Quality</p>
+            <p>---------------------</p>
+            <p>We place emphasis on maintaining the highest standards of quality at every step. This is achieved by
+                sourcing the freshest ingredients and preparing them with care, ensuring that every bite is </p>
+        </div>
+        <div class="value2">
+            <img src="{% static 'images/value2.png' %}" alt="Community">
+            <p>Community</p>
+            <p>---------------------</p>
+            <p>We believe that community support is one of the most important investments a business can make, and
+                we pride ourselves on fostering strong relationships with our local community, suppliers, and
+                distributors.</p>
+        </div>
+        <div class="value3">
+            <img src="{% static 'images/value3.png' %}" alt="Sustainability">
+            <p>Sustainability</p>
+            <p>---------------------</p>
+            <p>We are dedicated to promoting and operating in a way that benefits the environment. We work to reduce
+                food
+                waste and source ethically produced ingredients to minimize our carbon footprint.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer__addr">
+            <h1 class="footer__logo">Delicious bites</h1>
+
+            <h2> 👋 Contact us </h2>
+
+            <address>
+                123 Delta Street, Bells Town <br>
+                <p>Phone: 123-456-7890</p>
+
+                <a class="footer__btn" href="deliciousbites@gmail.com">Email Us</a>
+            </address>
+        </div>
+
+        <ul class="footer__nav">
+            <li class="nav__item">
+                <h2 class="nav__title">Social Media #️⃣</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Twitter</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Quick Links -->
+            <li class="nav__item nav__item--extra">
+                <h2 class="nav__title">Quick Links 🔗</h2>
+
+                <ul class="nav__ul nav__ul--extra">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">Legal ⚖️</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <!-- Copyright Information -->
+        <div class="legal">
+            <p>&copy; 2024 Delicious bites. All rights reserved.</p>
+        </div>
+    </footer>
+
+{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

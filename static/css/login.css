@@ -1,0 +1,29 @@
+/* Styling for the login form container */
+.login-container {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the "Welcome Back" message */
+.welcome-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Styling for the "Don't have an account? Sign up" message */
+.signup-message {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Styling for the "Forgot password?" link */
+.forgot-password {
+    font-size: 14px;
+    color: black;
+    text-align: right;
+}
