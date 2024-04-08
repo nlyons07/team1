@@ -49,4 +49,6 @@ def home(request):
 def about(request):
     return render(request, 'shop/about.html')
 
+def menu(request):
+    return render(request, 'shop/menu.html')
 
