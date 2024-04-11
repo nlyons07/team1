@@ -15,10 +15,11 @@ app_name = 'shop'
 
 
 urlpatterns = [
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('menu/', views.menu, name='menu'),
     path('<slug:category_slug>/', views.product_list,
          name='product_list_by_category'),
     path('<int:id>/<slug:slug>/', views.product_detail,
@@ -26,9 +27,9 @@ urlpatterns = [
     path('', views.product_list, name='product_list'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout', views.logout, name='logout'),
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name='reset_password'),
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
 
-
-    ]
-static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns += staticfiles_urlpatterns()
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
