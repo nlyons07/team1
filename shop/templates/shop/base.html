@@ -2,81 +2,56 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
-    <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8" />
     <title>{% block title %}Delicious Bites{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet">
-    <style>
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  </head>
 
-        .nav-buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .button {
-            margin-right: 10px;
-        }
-
-        .login-button {
-            margin-left: auto;
-        }
-    </style>
-</head>
-
-<body>
-<div id="navBar" class="navbar">
-    <a href="/" class="logo">Delicious Bites</a>
-    <div class="nav-buttons">
-        <a href="#" class="button">Menu</a>
+  <body>
+    <div id="navBar">
+      <a href="/" class="logo">Delicious Bites</a>
+      <div class="nav-buttons">
+        <!-- This will contain Menu, About, and Cart -->
+        <a href="/menu/" class="button">Menu</a>
         <a href="/about/" class="button">About</a>
         {% with total_items=cart|length %}
         <a href="{% url 'cart:cart_detail' %}" class="button">
-            {% if total_items > 0 %}
-                Cart: {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
-            {% else %}
-                Cart is empty
-            {% endif %}
+          {% if total_items > 0 %} Cart: {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }} {% else %} Cart is
+          empty {% endif %}
         </a>
         {% endwith %}
-    </div>
-    <div class="login-button">
+      </div>
+      <div class="login-button">
         {% if user.is_authenticated %}
-           <a href="logout" class="button">Log out</a>
+        <a href="logout" class="button">Log out</a>
         {% else %}
-            <a href="{% url 'login' %}" class="button"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+        <a href="{% url 'login' %}" class="button"><span class="glyphicon glyphicon-log-in"></span>Login</a>
         {% endif %}
+      </div>
+      <ul class="nav navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li>
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+          </form>
+        </li>
+        {% else %}
+        <li>
+          <a class="nav-link" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+        </li>
+        {% endif %}
+      </ul>
     </div>
-{#<ul class="nav navbar-nav ml-auto">#}
-{#        {% if user.is_authenticated %}#}
-{#           <li>#}
-{#              <form action="{% url 'logout' %}" method="post">#}
-{#                 {% csrf_token %}#}
-{#                 <button type="submit">Log out</button>#}
-{#              </form>#}
-{#           </li>#}
-{#        {% else %}#}
-{#            <li><a class="nav-link" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Login</a>#}
-{#            </li>#}
-{#        {% endif %}#}
-{#    </ul>#}
-</div>
 
-<div id="content">
-    {% block content %}
-    {% endblock %}
-</div>
+    <div id="content">{% block content %} {% endblock %}</div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 -->
-</body>
+  </body>
 </html>
