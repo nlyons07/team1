@@ -12,13 +12,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu", cursive;
   font-weight: normal;
+  text-align: center;
   color: #ff003b;
 }
 
 a {
   text-decoration: none;
+  font-size: medium;
   color: #ff003b;
 }
 
