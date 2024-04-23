@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    <h1>~Welcome to our Menu selection~ 🤤</h1>
     <div id="sidebar">
         <h3>Categories</h3>
         <ul>
@@ -29,12 +30,84 @@
                 <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
                 ${{ product.price }}
             </div>
-            
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-                ${{ product.price }}
+
+            </a>
+            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+            ${{ product.price }}
             </div>
         {% endfor %}
     </div>
+    <h2>Thank you for visting our menu 🤗!</h2>
+    <footer class="footer">
+        <div class="footer__addr">
+            <h1 class="footer__logo">Delicious bites</h1>
+
+
+            <address>
+                123 Delta Street, Bells Town <br>
+                <p>Phone: 123-456-7890</p>
+
+                <a class="footer__btn" href="deliciousbites@gmail.com">Email Us</a>
+            </address>
+        </div>
+
+        <ul class="footer__nav">
+            <li class="nav__item">
+                <h2 class="nav__title">Social Media #️⃣</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Twitter</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Quick Links -->
+            <li class="nav__item nav__item--extra">
+                <h2 class="nav__title">Quick Links 🔗</h2>
+
+                <ul class="nav__ul nav__ul--extra">
+                    <li>
+                        <a href=''>Home</a>
+                    </li>
+                    <li>
+                        <a href="/about/">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#"> 👋 Contact us </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">Legal ⚖️</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <!-- Copyright Information -->
+        <div class="legal">
+            <p>&copy; 2024 Delicious bites. All rights reserved.</p>
+        </div>
+    </footer>
 
 {% endblock %}
