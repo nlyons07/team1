@@ -37,3 +37,4 @@ def cart_detail(request):
             initial={'quantity': item['quantity'],
                      'update': True})
     return render(request, 'cart/detail.html', {'cart': cart})
+
