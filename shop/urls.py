@@ -27,6 +27,9 @@ urlpatterns = [
     path('', views.product_list, name='product_list'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout', views.logout, name='logout'),
+    path('', views.product_list, name='product_list'),
+    path('<slug:category_slug>/', views.product_list_by_category, name='product_list_by_category'),
+    path('products/', views.product_list, name='product-list'),
 
 
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
