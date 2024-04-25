@@ -2,49 +2,14 @@
 {% load static %}
 
 {% block extrahead %}
-    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 {% endblock %}
 
-<<<<<<< Updated upstream
 {% block title %}
-    All Products
+    <h1>~Welcome to our Menu selection~ 🤤</h1>
 {% endblock %}
 
-=======
-<style>
-product-grid {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.category-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1em;
-}
-
-.item {
-    border: 1px solid #ddd;
-    padding: 1em;
-    text-align: center;
-}
-
-.item img {
-    max-width: 100%;
-    height: auto;
-}
-
-.item h3 {
-    margin: 0.5em 0;
-}
-
-.price {
-    font-weight: bold;
-}
-</style>
->>>>>>> Stashed changes
 {% block content %}
-    <h1>~Welcome to our Menu selection~ 🤤</h1>
+    
     <div id="sidebar">
         <h3>Categories</h3>
         <ul>
@@ -60,15 +25,16 @@ product-grid {
     </div>
     <div id="main" class="product-list">
         <h1>All Products</h1>
-        <div class="category-products">
+        <div class="item-container">
             {% for product in products %}
-                <div class="item">
+                <div class="img">
                     <a href="{{ product.get_absolute_url }}">
-                        <img src="{{ product.image.url }}" class="square-image" alt="{{ product.name }}">
+                        <img src="{{ product.image.url }}" class="menu-product-image" alt="{{ product.name }}">
                     </a>
                     <h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
                     <p class="price">${{ product.price }}</p>
                 </div>
+
             {% endfor %}
         </div>
     </div>
