@@ -74,4 +74,3 @@ def logout(request):
 def menu(request):
     categories = Category.objects.all().prefetch_related('products')
     return render(request, 'shop/menu.html', {'categories': categories})
-
