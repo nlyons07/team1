@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
+from shop.views import create_account
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,20 +13,7 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path('', include('shop.urls', namespace='shop')),
     path('accounts/', include('django.contrib.auth.urls')),
-
-
-    # path('password_reset/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name='password_reset'),
-    # path('reset_password_done/', auth_views.PasswordResetDoneView.as_view(
-    #     template_name='your_app/password_reset_done.html'
-    # ), name='reset_password_done'),
-    # path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(
-    #     template_name='your_app/password_reset_confirm.html',
-    #     success_url='reset_password_complete'
-    # ), name='password_reset_confirm'),
-    # path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(
-    #     template_name='your_app/password_reset_complete.html'
-    # ), name='reset_password_complete'),
-
+    path('create_account/', create_account, name='create_account'),
 
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),  # serve media files when deployed
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root':

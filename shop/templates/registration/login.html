@@ -31,8 +31,9 @@
       <input type="submit" value="Login" style="background-color: #3498db; color: #ffffff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
       <input type="hidden" name="next" value="{{ next }}">
     </form>
-    <p style="text-align: center; margin-top: 10px; font-size: 12px;">
+    <p style="text-align: center; margin-top: 10px; font-size: 12px; flex:1; display:flex; width:100%; justify-content:space-between ">
       <a href="{% url 'password_reset' %}" style="color: #3498db;">Forgot password?</a>
+      <a href="{% url 'create_account' %}" style="color: #3498db;">Create account</a>  
     </p>
   </div>
 

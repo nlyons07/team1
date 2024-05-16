@@ -1,4 +1,5 @@
-<html> 
+{% extends "shop/base.html" %}
+<html>
 <body> 
   <h1>My Shop</h1> 
   <p> 
@@ -46,4 +47,5 @@
     {% if order.paid %}Paid{% else %}Pending payment{% endif %} 
   </span> 
 </body> 
-</html> 
+</html>
+{% Endblock %}

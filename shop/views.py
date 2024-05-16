@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+
+from orders.forms import UserRegistrationForm
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 from cart.cart import Cart
@@ -55,6 +57,20 @@ def home(request):
 
 def about(request):
     return render(request, 'shop/about.html')
+
+def create_account(request):
+    print("request", request)
+    if request.method == 'POST':
+        print("request.POST", request.POST)
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            #process the form data
+            form.save()
+            #redirect to a success page or login page
+            return redirect('login')
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'registration/create_account.html', {'form': form})
 
 
 def login(request):
